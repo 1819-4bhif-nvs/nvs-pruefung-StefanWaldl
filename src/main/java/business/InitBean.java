@@ -42,7 +42,10 @@ public class InitBean {
             String line;
             while ((line = br.readLine()) != null) {
                 dao.save(new Person(Person.Gender.male, line));
+
+                //System.out.println(line);
             }
+            dao.flush();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -54,6 +57,7 @@ public class InitBean {
             while ((line = br.readLine()) != null) {
                 dao.save(new Person(Person.Gender.female, line));
             }
+            dao.flush();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -2,8 +2,9 @@ package endpoint;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 
-@ApplicationPath("Surname")
+@Path("histogramm")
 public class Histogramm {
 
 

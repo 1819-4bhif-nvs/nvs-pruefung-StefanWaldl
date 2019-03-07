@@ -19,6 +19,8 @@ public class PersonDao {
 
     public void save(Person person){
         em.persist(person);
+    }
+    public void flush(){
         em.flush();
     }
 }
