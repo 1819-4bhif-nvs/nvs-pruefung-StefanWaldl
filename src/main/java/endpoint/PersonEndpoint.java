@@ -4,11 +4,11 @@ import daos.PersonDao;
 import model.Person;
 
 import javax.inject.Inject;
-import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 import java.util.List;
 
-@ApplicationPath("Person")
+@Path("surname")
 public class PersonEndpoint {
 
     @Inject

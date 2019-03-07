@@ -16,19 +16,35 @@ public class InitBean {
 
     @Inject
     PersonDao dao;
+
     private void init(@Observes @Initialized(ApplicationScoped.class) Object init) {
+        /*
         new BufferedReader(new InputStreamReader(this.getClass()
-                .getResourceAsStream("maenlich.csv"), Charset.defaultCharset()))
+                .getResourceAsStream("maennlich.csv"), Charset.defaultCharset()))
                 .lines()
                 .skip(1)
                 .map(a -> new Person(Person.Gender.male,a))
-                .forEach(dao::save);
+                .forEach(System.out::println);
+                //.forEach(dao::save);
 
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream("weiblich.csv"), Charset.defaultCharset()))
                 .lines()
                 .skip(1)
-                .map(a -> new Person(Person.Gender.male,a))
-                .forEach(dao::save);
+                .map(a -> new Person(Person.Gender.female,a))
+                .forEach(System.out::println);
+        //.forEach(dao::save);
+
+        */
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/maennlich.csv")));
+            br.readLine();
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
