@@ -41,7 +41,18 @@ public class InitBean {
             br.readLine();
             String line;
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
+                dao.save(new Person(Person.Gender.male, line));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/weiblich.csv")));
+            br.readLine();
+            String line;
+            while ((line = br.readLine()) != null) {
+                dao.save(new Person(Person.Gender.female, line));
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -21,7 +21,6 @@ public class Person  implements Serializable {
     public Person(Gender gender, String name){
         this.gender = gender;
         this.name = name;
-
     }
 
 
